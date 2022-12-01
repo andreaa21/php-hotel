@@ -42,6 +42,8 @@ $hotels = [
 
 
 
+
+
 ?>
 
 
@@ -74,29 +76,26 @@ $hotels = [
     </div>
 
 
-    <table class="table">
+    <table class="table table-striped m-5">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrizione</th>
+                <th scope="col">Parcheggio</th>
+                <th scope="col">Voto</th>
+                <th scope="col">Distanza dal centro</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($hotels as $hotel) ?>
-            <tr>
-                <th scope="row">1</th>
-                <td><?php echo $hotel['name']; ?></td>
-                <td><?php echo $hotel['description']; ?></td>
-                <td><?php echo $hotel['parking']; ?></td>
-                <td><?php echo $hotel['vote']; ?></td>
-            </tr>
+            <?php foreach ($hotels as $hotel) : ?>
+                <tr>
+                    <?php foreach ($hotel as $key => $value) : ?>
+                        <td><?php echo $value ?></td>
+                    <?php endforeach; ?>
+                </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
-
 
 </body>
 
