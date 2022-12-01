@@ -87,16 +87,22 @@ $hotels = [
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($hotels as $hotel) : ?>
-                <tr>
-                    <?php foreach ($hotel as $key => $value) : ?>
-                        <td><?php echo $value ?></td>
-                    <?php endforeach; ?>
-                </tr>
-            <?php endforeach; ?>
+            <?php
+            foreach ($hotels as $hotel) {
+                echo "<tr>";
+                foreach ($hotel as $key => $value) {
+                    echo "<td>$value</td>";
+                }
+                echo "</tr>";
+            }
+            ?>
         </tbody>
     </table>
 
 </body>
 
 </html>
+
+<!-- 
+                        
+                         -->
