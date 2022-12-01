@@ -53,18 +53,51 @@ $hotels = [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.css' integrity='sha512-bR79Bg78Wmn33N5nvkEyg66hNg+xF/Q8NA8YABbj+4sBngYhv9P8eum19hdjYcY7vXk/vRkhM3v/ZndtgEXRWw==' crossorigin='anonymous' />
+
     <title>php hotel</title>
 </head>
 
 <body>
-    <?php
-    foreach ($hotels as $hotel) {
-        foreach ($hotel as $key => $value) {
-            echo "<br>$key: $value";
-        }
-    }
 
-    ?>
+
+
+    <div class="p-5">
+        <?php
+        foreach ($hotels as $hotel) {
+            foreach ($hotel as $key => $value) {
+                echo "<br>$key: $value";
+            }
+        }
+        ?>
+    </div>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+                <th scope="col">Handle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($hotels as $hotel) ?>
+            <tr>
+                <th scope="row">1</th>
+                <td><?php echo $hotel['name']; ?></td>
+                <td><?php echo $hotel['description']; ?></td>
+                <td><?php echo $hotel['parking']; ?></td>
+                <td><?php echo $hotel['vote']; ?></td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
+
 </body>
 
 </html>
