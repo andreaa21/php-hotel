@@ -42,8 +42,6 @@ $hotels = [
 
 
 
-
-
 ?>
 
 
@@ -65,39 +63,36 @@ $hotels = [
 
 
 
-    <div class="p-5">
-        <?php
-        foreach ($hotels as $hotel) {
-            foreach ($hotel as $key => $value) {
-                echo "<br>$key: $value";
-            }
-        }
-        ?>
+
+    <div class="container">
+        <div class="row">
+            <div class="col p-5">
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Descrizione</th>
+                            <th scope="col">Parcheggio</th>
+                            <th scope="col">Voto</th>
+                            <th scope="col">Distanza dal centro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($hotels as $hotel) : ?>
+                            <tr>
+                                <td><?php echo $hotel['name'] ?></td>
+                                <td><?php echo $hotel['description'] ?></td>
+                                <td><?php echo $hotel['parking'] ? 'Si' : 'No' ?></td>
+                                <td><?php echo $hotel['vote'] ?></td>
+                                <td><?php echo $hotel['distance_to_center'] ?></td>
+                            </tr>
+                        <?php endforeach ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-
-
-    <table class="table table-striped m-5">
-        <thead>
-            <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">Descrizione</th>
-                <th scope="col">Parcheggio</th>
-                <th scope="col">Voto</th>
-                <th scope="col">Distanza dal centro</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            foreach ($hotels as $hotel) {
-                echo "<tr>";
-                foreach ($hotel as $key => $value) {
-                    echo "<td>$value</td>";
-                }
-                echo "</tr>";
-            }
-            ?>
-        </tbody>
-    </table>
 
 </body>
 
